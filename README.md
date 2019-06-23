@@ -6,6 +6,7 @@ Kafka port : 9092 (Can be configured in the application.yml)
 Kafka Topic : mercury (Hard coded, will create this topic if does not exist)
 Databse Console URL: http://localhost:9000/h2 (Use this to get the transaction ID, as  check the database) 
 
+
 Database Table/Confiuration:
 In the application.yml change the location of the database.
 url: jdbc:h2:file:C:\Gaurav\aa;DB_CLOSE_ON_EXIT=FALSE
