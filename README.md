@@ -1,23 +1,13 @@
-# Blockchain
-
 Language Used: Java
-
 FrameWork: Spring Boot with Kafka
-
 Database: H2 (Creates a file to store the records, overwrites the file everytime we start the application)
-
 WebService port : 9000 (Can be configured in the application.yml)
-
 Kafka port : 9092 (Can be configured in the application.yml)
-
-Kafka Topic name : mercury (Hard coded, will create this topic if does not exist)
-
+Kafka Topic : mercury (Hard coded, will create this topic if does not exist)
 Databse Console URL: http://localhost:9000/h2 (Use this to get the transaction ID, as  check the database) 
 
 Database Table/Confiuration:
-
 In the application.yml change the location of the database.
-
 url: jdbc:h2:file:C:\Gaurav\aa;DB_CLOSE_ON_EXIT=FALSE
 
 Here you have to change "C:\Gaurav\aa" to your file location, this will be created as soon as you run te applciation.
