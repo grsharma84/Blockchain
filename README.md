@@ -13,6 +13,8 @@ Kafka Topic : mercury (Hard coded, will create this topic if does not exist)
 Databse Console URL: http://localhost:9000/h2 (Use this to get the transaction ID, as  check the database) 
 
 
+
+
 Database Table/Confiuration:
 In the application.yml change the location of the database.
 url: jdbc:h2:file:C:\Gaurav\aa;DB_CLOSE_ON_EXIT=FALSE
@@ -21,8 +23,13 @@ Here you have to change "C:\Gaurav\aa" to your file location, this will be creat
 
 Database tables are defined in the schema.sql, they get created at the startup.
 
+
+
+
 Tables:
+
 UserDetails: Contains the userId, token and quantity.
+
 Transaction: Once you call the withddraw API, a record will be stored in the trasaction table as unsettled, the 
 transaction ID is auto generated. In the Kafka message you will have to provide the matchin transaction ID.
 You can retrieve the transaction ID using the H2 console.
@@ -30,22 +37,34 @@ You can retrieve the transaction ID using the H2 console.
 
 APIS:
 
+
 To add the user with the initial quantity. Call the below rest service to add the user for specific tokens
+
 Put Request to add a userId
+
 URL: http://localhost:9000/user/add/userid/{userId}/token/{token}/quantity/{quantity}
+
 Example: http://localhost:9000/user/add/userid/2/token/BTC/quantity/11.78	
+
 Return : Message saying that the user was added succesfully
 
 
 To Withdraw from account call the below GET request
+
 URL: http://localhost:9000/user/withdraw/userid/{userID}/token/{token}/quantity/{quantity}
+
 Example: http://localhost:9000/user/withdraw/userid/2/token/BTC/quantity/10.00
+
 return: SUFFICIENT_BALANCE/INSUFFICIENT_BALANCE/User does not exists
 
 To settle a transaction: 
+
 Kafka publish url:  http://localhost:9000/kafka/publish
+
 Settlement Message format:
- {"userId": "2","transactionId": "2","broughtToken": USD,"broughtQuantity": 500,"soldToken": BTC , "soldQuantity" : 9}
+
+{"userId": "2","transactionId": "2","broughtToken": USD,"broughtQuantity": 500,"soldToken": BTC , "soldQuantity" : 9}
+
 If the transaction ID does not exist, the process will skip that message.
 
 Cache:
