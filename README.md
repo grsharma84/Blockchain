@@ -35,7 +35,7 @@ URL: http://localhost:9000/user/withdraw/userid/{userID}/token/{token}/quantity/
 Example: http://localhost:9000/user/withdraw/userid/2/token/BTC/quantity/10.00
 return: SUFFICIENT_BALANCE/INSUFFICIENT_BALANCE/User does not exists
 
-To settle a transaction:
+To settle a transaction: 
 Kafka publish url:  http://localhost:9000/kafka/publish
 Settlement Message format:
  {"userId": "2","transactionId": "2","broughtToken": USD,"broughtQuantity": 500,"soldToken": BTC , "soldQuantity" : 9}
