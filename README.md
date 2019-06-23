@@ -37,6 +37,7 @@ You can retrieve the transaction ID using the H2 console.
 
 APIS:
 
+For some reason the process fails to read from the data.sql to initally load the data into H2 database, so i've provided an API to add user.
 
 To add the user with the initial quantity. Call the below rest service to add the user for specific tokens
 
