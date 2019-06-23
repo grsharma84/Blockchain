@@ -1,9 +1,15 @@
 Language Used: Java
+
 FrameWork: Spring Boot with Kafka
+
 Database: H2 (Creates a file to store the records, overwrites the file everytime we start the application)
+
 WebService port : 9000 (Can be configured in the application.yml)
+
 Kafka port : 9092 (Can be configured in the application.yml)
+
 Kafka Topic : mercury (Hard coded, will create this topic if does not exist)
+
 Databse Console URL: http://localhost:9000/h2 (Use this to get the transaction ID, as  check the database) 
 
 
