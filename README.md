@@ -28,7 +28,7 @@ Database tables are defined in the schema.sql, they get created at the startup.
 
 Tables:
 
-UserDetails: Contains the userId, token and quantity.
+UserDetails: Contains the userId, token and quantity. (I created it in this format so that new currencies can be added easily)
 
 Transaction: Once you call the withddraw API, a record will be stored in the trasaction table as unsettled, the 
 transaction ID is auto generated. In the Kafka message you will have to provide the matchin transaction ID.
